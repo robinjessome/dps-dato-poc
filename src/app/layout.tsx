@@ -32,7 +32,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className="font-bold">
         <header>
           <h1>DatoCMS + Next.js Starter Kit</h1>
           <nav>

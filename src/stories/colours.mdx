@@ -1,0 +1,29 @@
+import { Meta } from '@storybook/blocks'
+import { ColorPalette, ColorItem } from '@storybook/blocks'
+
+import resolveConfig from 'tailwindcss/resolveConfig'
+import tailwindConfig from '../../tailwind.config.js'
+
+export const fullConfig = resolveConfig(tailwindConfig)
+export const colors = fullConfig.theme.colors
+
+
+<Meta title="System/Colors" />
+# Colours!
+---
+{
+  colors && 
+  <div style={{paddingTop: '40px'}}>
+
+  <ColorPalette>
+    {Object.entries(colors).map(([key, value], i) => {
+      if (typeof value === 'string') {
+        return <ColorItem key={key+i} title={key} colors={{ [key] : value }} />
+      } else if (typeof value === 'object') {
+        return <ColorItem key={key+i} title={key} colors={value} />
+      }
+    })}
+  </ColorPalette>
+  
+  </div>
+}
