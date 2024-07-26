@@ -1,12 +1,11 @@
-import { Meta } from '@storybook/blocks'
-import { ColorPalette, ColorItem } from '@storybook/blocks'
+import { Meta } from '@storybook/blocks';
+import { ColorPalette, ColorItem } from '@storybook/blocks';
 
-import resolveConfig from 'tailwindcss/resolveConfig'
-import tailwindConfig from '../../tailwind.config.js'
+import resolveConfig from 'tailwindcss/resolveConfig';
+import tailwindConfig from '../../tailwind.config.js';
 
-export const fullConfig = resolveConfig(tailwindConfig)
-export const colors = fullConfig.theme.colors
-
+export const fullConfig = resolveConfig(tailwindConfig);
+export const colors = fullConfig.theme.colors;
 
 <Meta title="System/Colors" />
 # Colours!

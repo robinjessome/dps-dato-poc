@@ -33,12 +33,18 @@ export default async function Post({ params }: { params: { slug: string } }) {
     <div>
       Hello!
       <ul>
-        <li>Title: <strong>{currentPost.title}</strong> {currentPost.subtitle}</li>
+        <li>
+          Title: <strong>{currentPost.title}</strong> {currentPost.subtitle}
+        </li>
         <li>Slug: {currentPost.slug}</li>
         <li>First published: {currentPost._firstPublishedAt}</li>
       </ul>
-      {currentPost.image?.responsiveImage && <ResponsiveImage data={currentPost.image?.responsiveImage} />}
-      {currentPost.longDescription && <p dangerouslySetInnerHTML={{ __html: currentPost.longDescription }} />}
+      {currentPost.image?.responsiveImage && (
+        <ResponsiveImage data={currentPost.image?.responsiveImage} />
+      )}
+      {currentPost.longDescription && (
+        <p dangerouslySetInnerHTML={{ __html: currentPost.longDescription }} />
+      )}
     </div>
   );
 }
